@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Gawa Ghee</title>
+    <meta name="description" content="Discover the 20+ year legacy of Gawa Ghee. From specialized dairy sourcing networks in West Bengal to pan-India enterprise supply.">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+    <!-- Global Analytics & Tracking Hooks -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        console.log("GA4: Tracking initialised for Gawa Ghee B2B platform.");
+        console.log("Meta Pixel: Tracking active.");
+    </script>
+
+    <!-- Structured B2B Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Gawa Ghee (Ghosh Dairy Farm)",
+      "image": "http://localhost:8000/assets/images/hero-ghee.png",
+      "description": "Premium Pure Ghee Manufacturer based in West Bengal, India. Trusted by canteens, hotels, and distributors.",
+      "telephone": "+91 00000 00000",
+      "email": "b2b@gawaghee.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ghosh Dairy Farm HQ",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": ["Pure Ghee Manufacturer India", "Bulk Ghee Supplier", "Wholesale Ghee Supplier"]
+    }
+    </script>
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--royal-gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 4px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--deep-burgundy);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--white);
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--white) transparent transparent;
+        }
+        .right::after { left: -10px; }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .timeline-content h3 {
+            color: var(--deep-burgundy);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content span {
+            color: var(--royal-gold);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::before { left: 60px; border: medium solid var(--white); border-width: 10px 10px 10px 0; border-color: transparent var(--white) transparent transparent; }
+            .left::after, .right::after { left: 21px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="global-header">
+        <div class="header-container container">
+            <a href="index.html" class="logo">
+                <h2>GAWA GHEE</h2>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="our-story.html" class="text-gold">Our Story</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-pad bg-burgundy" style="padding-top: 150px; text-align: center;">
+        <div class="container animate-on-scroll">
+            <h1 style="color: var(--royal-gold);">From Bengal Farms to Global Kitchens</h1>
+            <p style="color: var(--cream-ivory); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Every spoon of Gawa Ghee carries a 20-year vow: the same cows, the same hands, the same purity. We are not a new brand chasing a trend - we are an old brand telling its story to the world.</p>
+        </div>
+    </section>
+
+    <!-- Visual Story -->
+    <section class="section-pad bg-white">
+        <div class="container">
+            <div class="hero-visual animate-on-scroll" style="margin-bottom: var(--spacing-xl);">
+                <img src="assets/images/farm-sunrise.png" alt="Sunrise over Gawa Ghee Dairy Farms in West Bengal" style="border-radius: 12px; width: 100%; max-width: 1000px; margin: 0 auto;">
+            </div>
+            
+            <h2 class="text-center animate-on-scroll" style="margin-bottom: var(--spacing-lg);">Chronological Infrastructure Milestones</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left animate-on-scroll">
+                    <div class="timeline-content">
+                        <span>2006</span>
+                        <h3>Foundation</h3>
+                        <p>Establishment of specialized dairy sourcing networks within West Bengal, laying the root of our purity pledge.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="timeline-content">
+                        <span>2010</span>
+                        <h3>Logistics Expansion</h3>
+                        <p>Launch of expanded processing facilities to support growing regional demand and scale production.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="timeline-content">
+                        <span>2015</span>
+                        <h3>Distributor Network Growth</h3>
+                        <p>Onboarding major tier-1 supply networks across eastern territories, establishing distribution dominance.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right animate-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="timeline-content">
+                        <span>2020</span>
+                        <h3>Institutional Supply Pivot</h3>
+                        <p>Securing strict regulatory approvals for military supply lines, including Indian Army Canteens.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="timeline-content">
+                        <span>2026</span>
+                        <h3>Pan-India Enterprise Launch</h3>
+                        <p>Nationwide deployment of advanced digital B2B systems for global and rapid local supply pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="font-family: var(--font-heading); font-size: 1.5rem;">GAWA GHEE</h4>
+                    <p>Premium Pure Ghee Manufacturer based in West Bengal, India. Trusted by institutions for over 20 years.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products Grid</a>
+                    <a href="our-story.html">Corporate Heritage</a>
+                    <a href="contact.html">B2B Enquiries</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Certifications</h4>
+                    <p>✓ FSSAI Certified</p>
+                    <p>✓ ISO 9001:2015</p>
+                    <p>✓ Halal & Kosher Ready</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Headquarters</h4>
+                    <p>Ghosh Dairy Farm HQ</p>
+                    <p>Kolkata, West Bengal, India</p>
+                    <p>Email: b2b@gawaghee.com</p>
+                    <p>Phone: +91 00000 00000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ghosh Dairy Farm. All rights reserved. Gawa Ghee Website Framework v1.0.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA Buttons -->
+    <a href="mailto:b2b@gawaghee.com" class="floating-mail" aria-label="Email Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+    <a href="tel:+910000000000" class="floating-call" aria-label="Call Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11l-2.2 2.2z"/>
+        </svg>
+    </a>
+    <a href="https://wa.me/910000000000" class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

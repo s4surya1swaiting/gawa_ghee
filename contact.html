@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Gawa Ghee B2B</title>
+    <meta name="description" content="Connect with Gawa Ghee for bulk pricing, dealership, wholesale, institutional supply, and private labelling.">
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+    <!-- Global Analytics & Tracking Hooks -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        console.log("GA4: Tracking initialised for Gawa Ghee B2B platform.");
+        console.log("Meta Pixel: Tracking active.");
+    </script>
+
+    <!-- Structured B2B Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Gawa Ghee (Ghosh Dairy Farm)",
+      "image": "http://localhost:8000/assets/images/hero-ghee.png",
+      "description": "Premium Pure Ghee Manufacturer based in West Bengal, India. Trusted by canteens, hotels, and distributors.",
+      "telephone": "+91 00000 00000",
+      "email": "b2b@gawaghee.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ghosh Dairy Farm HQ",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      },
+      "knowsAbout": ["Pure Ghee Manufacturer India", "Bulk Ghee Supplier", "Wholesale Ghee Supplier"]
+    }
+    </script>
+    <style>
+        .contact-wrapper {
+            background-color: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            padding: var(--spacing-xl);
+            max-width: 800px;
+            margin: 2.5rem auto var(--spacing-xl);
+            position: relative;
+            z-index: 10;
+        }
+        .form-row {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .form-row > div {
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="global-header">
+        <div class="header-container container">
+            <a href="index.html" class="logo">
+                <h2>GAWA GHEE</h2>
+            </a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="our-story.html">Our Story</a>
+                    <a href="contact.html" class="text-gold">Contact Us</a>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-pad bg-burgundy" style="padding-top: 150px; padding-bottom: 120px; text-align: center;">
+        <div class="container animate-on-scroll">
+            <h1 style="color: var(--royal-gold);">B2B Contact Terminal</h1>
+            <p style="color: var(--cream-ivory); font-size: 1.2rem;">Connect with our enterprise team for institutional supply & distribution.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="bg-cream">
+        <div class="container animate-on-scroll">
+            <div class="contact-wrapper">
+                <h2 style="margin-bottom: var(--spacing-md); text-align: center;">Request Bulk Pricing</h2>
+                <form id="b2b-contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Form successfully submitted! Our enterprise team will contact you within 24 hours.');">
+                    
+                    <!-- Identity Suite -->
+                    <div class="form-row">
+                        <div>
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="companyName">Company Legal Entity *</label>
+                            <input type="text" id="companyName" name="companyName" class="form-control" required placeholder="ABC Enterprises Pvt Ltd">
+                        </div>
+                    </div>
+
+                    <!-- Contact Suite -->
+                    <div class="form-row">
+                        <div>
+                            <label for="phone">Direct Phone (WhatsApp Active) *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,14}" placeholder="+91 90000 00000">
+                        </div>
+                        <div>
+                            <label for="email">Business Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@abcenterprises.com">
+                        </div>
+                    </div>
+
+                    <!-- Operational Select -->
+                    <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                        <label for="operationType">Requirement Type *</label>
+                        <select id="operationType" name="operationType" class="form-control" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="bulk_purchase">Bulk Purchase</option>
+                            <option value="distribution">Distribution Dealership</option>
+                            <option value="horeca">HoReCa Supply</option>
+                            <option value="white_label">White Label / Private Branding</option>
+                        </select>
+                    </div>
+
+                    <!-- Requirement Context -->
+                    <div class="form-group" style="margin-bottom: var(--spacing-lg);">
+                        <label for="requirement-context">Volume Metrics & Context</label>
+                        <textarea id="requirement-context" name="requirementContext" class="form-control" placeholder="Please specify expected monthly volumes (e.g., 500kg/month), delivery locations, or specific SKUs..."></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px; font-size: 1.1rem; padding: 1rem;">Submit Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 style="font-family: var(--font-heading); font-size: 1.5rem;">GAWA GHEE</h4>
+                    <p>Premium Pure Ghee Manufacturer based in West Bengal, India. Trusted by institutions for over 20 years.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products Grid</a>
+                    <a href="our-story.html">Corporate Heritage</a>
+                    <a href="contact.html">B2B Enquiries</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Certifications</h4>
+                    <p>✓ FSSAI Certified</p>
+                    <p>✓ ISO 9001:2015</p>
+                    <p>✓ Halal & Kosher Ready</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Headquarters</h4>
+                    <p>Ghosh Dairy Farm HQ</p>
+                    <p>Kolkata, West Bengal, India</p>
+                    <p>Email: b2b@gawaghee.com</p>
+                    <p>Phone: +91 00000 00000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ghosh Dairy Farm. All rights reserved. Gawa Ghee Website Framework v1.0.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA Buttons -->
+    <a href="mailto:b2b@gawaghee.com" class="floating-mail" aria-label="Email Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+    <a href="tel:+910000000000" class="floating-call" aria-label="Call Us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.27 1.11l-2.2 2.2z"/>
+        </svg>
+    </a>
+    <a href="https://wa.me/910000000000" class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
