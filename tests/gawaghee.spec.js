@@ -114,7 +114,7 @@ test.describe('Gawa Ghee B2B Website E2E Tests', () => {
     test('Pricing Control (MRP) displays transparently on homepage and products grid', async ({ page }) => {
         // Check homepage previews
         await page.goto('http://localhost:8000/index.html');
-        const previewCard = page.locator('.product-card:has-text("Commercial Kitchen Supply")');
+        const previewCard = page.locator('.product-card:has-text("Commercial Bulk Supply")');
         await expect(previewCard.locator('.product-price')).toContainText('MRP: ₹9,100 - ₹10,050 per tin');
 
         // Check products grid
