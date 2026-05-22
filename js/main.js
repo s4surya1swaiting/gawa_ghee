@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const skuParam = urlParams.get('sku');
         if (skuParam) {
-            const contextField = document.getElementById('requirement-context');
+            const contextField = document.getElementById('additionalDetails');
             if (contextField) {
                 contextField.value = `I am interested in bulk purchasing for SKU: ${skuParam}. Please provide pricing details.`;
             }

@@ -77,11 +77,9 @@ test.describe('Gawa Ghee B2B Website E2E Tests', () => {
         
         // Fill form fields
         await page.fill('#fullName', 'Jane Supplier');
-        await page.fill('#companyName', 'HoReCa Wholesale Ltd');
         await page.fill('#phone', '9876543210');
-        await page.fill('#email', 'procurement@horecawholesale.com');
         await page.selectOption('#operationType', 'horeca');
-        await page.fill('#requirement-context', 'Looking for 500kg per month bulk packing.');
+        await page.fill('#additionalDetails', 'Looking for 500kg per month bulk packing.');
         
         // Submit
         await page.click('button[type="submit"]');
@@ -91,7 +89,7 @@ test.describe('Gawa Ghee B2B Website E2E Tests', () => {
         // Navigate to contact page with sku parameter
         await page.goto('http://localhost:8000/contact.html?sku=Classic-1L-Tin');
         
-        const contextTextarea = page.locator('#requirement-context');
+        const contextTextarea = page.locator('#additionalDetails');
         await expect(contextTextarea).toHaveValue(/I am interested in bulk purchasing for SKU: Classic-1L-Tin/);
         
         // Verify from Products page navigation

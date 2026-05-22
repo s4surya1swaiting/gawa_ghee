@@ -99,31 +99,37 @@
                 <h2 style="margin-bottom: var(--spacing-md); text-align: center;">Request Bulk Pricing</h2>
                 <form id="b2b-contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Form successfully submitted! Our enterprise team will contact you within 24 hours.');">
                     
-                    <!-- Identity Suite -->
+                    <!-- Row 1: Full Name + Phone -->
                     <div class="form-row">
                         <div>
                             <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="John Doe">
+                            <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="Your full name">
                         </div>
-                        <div>
-                            <label for="companyName">Company Legal Entity *</label>
-                            <input type="text" id="companyName" name="companyName" class="form-control" required placeholder="ABC Enterprises Pvt Ltd">
-                        </div>
-                    </div>
-
-                    <!-- Contact Suite -->
-                    <div class="form-row">
                         <div>
                             <label for="phone">Direct Phone (WhatsApp Active) *</label>
                             <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,14}" placeholder="+91 90000 00000">
-                        </div>
-                        <div>
-                            <label for="email">Business Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" required placeholder="john@abcenterprises.com">
+                            <div style="margin-top: 6px;">
+                                <label style="font-size: 0.82rem; color: #777; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
+                                    <input type="checkbox" id="noWhatsApp" name="noWhatsApp" style="accent-color: var(--deep-burgundy); width: 16px; height: 16px;" onchange="document.getElementById('altPhoneWrapper').style.display = this.checked ? 'block' : 'none';">
+                                    WhatsApp not active on this number
+                                </label>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Operational Select -->
+                    <!-- Alternate Phone (hidden by default) -->
+                    <div id="altPhoneWrapper" style="display: none; margin-bottom: var(--spacing-md);">
+                        <label for="altPhone">Alternate Phone Number *</label>
+                        <input type="tel" id="altPhone" name="altPhone" class="form-control" pattern="[0-9]{10,14}" placeholder="+91 80000 00000">
+                    </div>
+
+                    <!-- Row 2: Email -->
+                    <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com">
+                    </div>
+
+                    <!-- Requirement Type -->
                     <div class="form-group" style="margin-bottom: var(--spacing-md);">
                         <label for="operationType">Requirement Type *</label>
                         <select id="operationType" name="operationType" class="form-control" required>
@@ -132,13 +138,46 @@
                             <option value="distribution">Distribution Dealership</option>
                             <option value="horeca">HoReCa Supply</option>
                             <option value="white_label">White Label / Private Branding</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
 
-                    <!-- Requirement Context -->
+                    <!-- Product + Quantity Selection -->
+                    <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                        <label>Product & Quantity</label>
+                        <div class="form-row" style="margin-bottom: 0;">
+                            <div>
+                                <select id="productSelect" name="productSelect" class="form-control">
+                                    <option value="" disabled selected>Select Product...</option>
+                                    <option value="premium_danadar_500g">Premium Danadar Ghee — 500g Jar</option>
+                                    <option value="classic_1l_tin">Classic Pure Cow Ghee — 1L Tin</option>
+                                    <option value="institutional_15kg">Commercial Kitchen Supply — 15kg Tin</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select id="quantitySelect" name="quantitySelect" class="form-control" onchange="document.getElementById('customQtyWrapper').style.display = this.value === 'custom' ? 'block' : 'none';">
+                                    <option value="" disabled selected>Select Quantity...</option>
+                                    <option value="10">10 units</option>
+                                    <option value="25">25 units</option>
+                                    <option value="50">50 units</option>
+                                    <option value="100">100 units</option>
+                                    <option value="250">250 units</option>
+                                    <option value="500">500 units</option>
+                                    <option value="1000">1000+ units</option>
+                                    <option value="custom">Custom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Custom Quantity (hidden by default) -->
+                        <div id="customQtyWrapper" style="display: none; margin-top: var(--spacing-sm);">
+                            <input type="text" id="customQty" name="customQty" class="form-control" placeholder="Enter custom quantity (e.g., 5000 units, 2 tonnes/month)">
+                        </div>
+                    </div>
+
+                    <!-- Additional Details -->
                     <div class="form-group" style="margin-bottom: var(--spacing-lg);">
-                        <label for="requirement-context">Volume Metrics & Context</label>
-                        <textarea id="requirement-context" name="requirementContext" class="form-control" placeholder="Please specify expected monthly volumes (e.g., 500kg/month), delivery locations, or specific SKUs..."></textarea>
+                        <label for="additionalDetails">Additional Details</label>
+                        <textarea id="additionalDetails" name="additionalDetails" class="form-control" placeholder="Please mention your details — e.g., individual or contractual buyer, company name, expected monthly volume, delivery location, specific SKU preferences, etc."></textarea>
                     </div>
 
                     <div style="text-align: center;">
