@@ -272,9 +272,9 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 .ghee-pour {
   position: absolute;
   top: -10px;
-  left: -65px;
-  width: 80px;
-  height: 100px;
+  left: -70px;
+  width: 70px;
+  height: 90px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -290,14 +290,14 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 
 @keyframes ghee-flow-aside {
   0% {
-    transform: translate(75px, 15px) scale(0);
+    transform: translate(90px, 10px) scale(0);
     opacity: 0;
   }
-  30% {
-    transform: translate(50px, 20px) scale(0.5);
+  35% {
+    transform: translate(60px, 15px) scale(0.5);
     opacity: 0.8;
   }
-  60% {
+  65% {
     transform: translate(-10px, 5px) scale(1.1);
     opacity: 1;
   }
@@ -308,12 +308,12 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 }
 
 .ghee-drop {
-  width: 60px;
-  height: 80px;
+  width: 44px;
+  height: 60px;
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: relative;
-  box-shadow: 0 5px 20px rgba(255, 165, 0, 0.5), inset -5px -5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4), inset -3px -3px 10px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,13 +335,13 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 .ghee-drop::before {
   content: '';
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 20px;
-  height: 20px;
+  top: 8px;
+  left: 8px;
+  width: 14px;
+  height: 14px;
   background: rgba(255,255,255,0.5);
   border-radius: 50%;
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .ghee-content {
@@ -378,7 +378,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 }
 
 .ghee-call-icon {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   animation: call-pulse 1s ease-in-out infinite;
 }
 
@@ -539,12 +539,20 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   left: 0;
   width: 100%;
   background-color: var(--white);
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md) 1.5rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transform: translateY(-10px);
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-nav:has(.ghee-pour.active) {
+  padding-bottom: 7.5rem;
 }
 
 .main-nav.is-open {
@@ -1053,8 +1061,10 @@ textarea.form-control {
     padding: 0;
     box-shadow: none;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    text-align: left;
     flex-grow: 1;
   }
 
