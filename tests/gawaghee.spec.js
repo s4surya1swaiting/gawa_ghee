@@ -115,11 +115,11 @@ test.describe('Gawa Ghee B2B Website E2E Tests', () => {
         // Check homepage previews
         await page.goto('http://localhost:8000/index.html');
         const previewCard = page.locator('.product-card:has-text("Commercial Kitchen Supply")');
-        await expect(previewCard.locator('.product-price')).toContainText('MRP: ₹9,100 - ₹10,050');
+        await expect(previewCard.locator('.product-price')).toContainText('MRP: ₹9,100 - ₹10,050 per tin');
 
         // Check products grid
         await page.goto('http://localhost:8000/products.html');
         const gridCard = page.locator('.product-card:has-text("Gawa Ghee — 500g Jar")');
-        await expect(gridCard.locator('.product-price')).toContainText('MRP: ₹305 - ₹330');
+        await expect(gridCard.locator('.product-price')).toContainText('MRP: ₹305 - ₹330 per jar');
     });
 });
