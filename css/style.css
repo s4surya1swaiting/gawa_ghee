@@ -34,6 +34,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -79,6 +80,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   width: 100%;
   padding: 0 var(--spacing-md);
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .text-center { text-align: center; }
@@ -472,6 +474,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   transition: padding var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  overflow-x: hidden;
 }
 
 .global-header .header-container {
@@ -481,6 +484,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   padding: 1.25rem var(--spacing-md);
   transition: padding var(--transition-smooth);
   gap: 1.5rem;
+  overflow-x: hidden;
 }
 
 /* Scrolled Header State */
@@ -564,6 +568,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow-x: hidden;
 }
 
 .hero-content {
@@ -671,6 +676,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   display: flex;
   width: 200%;
   animation: ticker 40s linear infinite;
+  overflow: hidden;
 }
 
 .ticker-track {
@@ -695,6 +701,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   .ticker-wrapper {
     width: 200%;
     animation: ticker 40s linear infinite;
+    overflow: hidden;
   }
   
   .ticker-track {
@@ -1057,6 +1064,7 @@ textarea.form-control {
   .container {
     max-width: 1200px;
     padding: 0 var(--spacing-lg);
+    overflow-x: hidden;
   }
 
   /* Header */
