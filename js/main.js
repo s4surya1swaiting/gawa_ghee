@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', () => {
             mainNav.classList.toggle('is-open');
         });
+    } else {
+        console.error('Mobile navigation elements not found:', { navToggle, mainNav });
     }
 
     // Scroll Animations (Intersection Observer)
