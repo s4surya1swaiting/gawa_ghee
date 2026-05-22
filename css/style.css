@@ -474,7 +474,6 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   transition: padding var(--transition-smooth), background-color var(--transition-smooth), box-shadow var(--transition-smooth);
-  overflow-x: hidden;
 }
 
 .global-header .header-container {
@@ -484,7 +483,6 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   padding: 1.25rem var(--spacing-md);
   transition: padding var(--transition-smooth);
   gap: 1.5rem;
-  overflow-x: hidden;
 }
 
 /* Scrolled Header State */
