@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://s4surya1swaiting.github.io/gawa_ghee/sitemap.xml
