@@ -662,6 +662,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   background-color: var(--white);
   padding: var(--spacing-md) 0;
   overflow: hidden;
+  overflow-x: hidden;
   border-top: 1px solid var(--grey-light);
   border-bottom: 1px solid var(--grey-light);
 }
