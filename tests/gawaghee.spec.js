@@ -85,36 +85,41 @@ test.describe('Gawa Ghee B2B Website E2E Tests', () => {
         await page.click('button[type="submit"]');
     });
 
-    test('Dynamic SKU parameter routing pre-fills the enquiry context', async ({ page }) => {
+    test('Dynamic SKU parameter routing pre-fills the enquiry context and select option', async ({ page }) => {
         // Navigate to contact page with sku parameter
-        await page.goto('http://localhost:8000/contact.html?sku=Classic-1L-Tin');
+        await page.goto('http://localhost:8000/contact.html?sku=1Kg-Tin');
         
         const contextTextarea = page.locator('#additionalDetails');
-        await expect(contextTextarea).toHaveValue(/I am interested in bulk purchasing for SKU: Classic-1L-Tin/);
+        await expect(contextTextarea).toHaveValue(/I am interested in bulk purchasing for SKU: 1Kg-Tin/);
+        
+        // Verify dropdown is selected
+        const select = page.locator('#productSelect');
+        await expect(select).toHaveValue('1Kg-Tin');
         
         // Verify from Products page navigation
         await page.goto('http://localhost:8000/products.html');
         
-        // Click enquire now on the 1L Tin product card
-        const card = page.locator('.product-card:has-text("Classic Pure Cow Ghee")');
+        // Click enquire now on the 1Kg Tin product card
+        const card = page.locator('.product-card:has-text("Gawa Ghee — 1 Kg Tin")');
         const enquireBtn = card.locator('text=Enquire Now');
         
         await enquireBtn.click();
         
         // Verify routing and automatic parameter fill
-        await expect(page).toHaveURL(/contact.html\?sku=Classic-1L-Tin/);
-        await expect(contextTextarea).toHaveValue(/I am interested in bulk purchasing for SKU: Classic-1L-Tin/);
+        await expect(page).toHaveURL(/contact.html\?sku=1Kg-Tin/);
+        await expect(contextTextarea).toHaveValue(/I am interested in bulk purchasing for SKU: 1Kg-Tin/);
+        await expect(select).toHaveValue('1Kg-Tin');
     });
 
     test('Pricing Control (MRP) displays transparently on homepage and products grid', async ({ page }) => {
         // Check homepage previews
         await page.goto('http://localhost:8000/index.html');
         const previewCard = page.locator('.product-card:has-text("Commercial Kitchen Supply")');
-        await expect(previewCard.locator('.product-price')).toContainText('MRP: ₹9,499');
+        await expect(previewCard.locator('.product-price')).toContainText('MRP: ₹9,100 - ₹10,050');
 
         // Check products grid
         await page.goto('http://localhost:8000/products.html');
-        const gridCard = page.locator('.product-card:has-text("Premium Danadar Gawa Ghee")');
-        await expect(gridCard.locator('.product-price')).toContainText('MRP: ₹349');
+        const gridCard = page.locator('.product-card:has-text("Gawa Ghee — 500g Jar")');
+        await expect(gridCard.locator('.product-price')).toContainText('MRP: ₹305 - ₹330');
     });
 });

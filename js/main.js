@@ -44,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const skuParam = urlParams.get('sku');
         if (skuParam) {
+            // Select matching product option
+            const productField = document.getElementById('productSelect');
+            if (productField) {
+                const matchedOption = Array.from(productField.options).find(opt => opt.value === skuParam);
+                if (matchedOption) {
+                    productField.value = skuParam;
+                }
+            }
+            // Populate additional details
             const contextField = document.getElementById('additionalDetails');
             if (contextField) {
                 contextField.value = `I am interested in bulk purchasing for SKU: ${skuParam}. Please provide pricing details.`;
