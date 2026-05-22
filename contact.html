@@ -79,7 +79,21 @@
                     <a href="our-story.html">Our Story</a>
                     <a href="contact.html" class="text-gold">Contact Us</a>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+                <div class="ghee-assistant" onclick="toggleAssistant()">
+                    <div class="ghee-bottle">
+                        <div class="bottle-cap"></div>
+                        <div class="bottle-body"></div>
+                        <div class="bottle-label">GAWA</div>
+                    </div>
+                    <div class="ghee-pour" id="gheePour">
+                        <div class="ghee-drop">
+                            <div class="ghee-content">
+                                <div class="ghee-phone">+91 00000 00000</div>
+                                <div class="ghee-call-icon">📞</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -106,21 +120,21 @@
                             <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="Your full name">
                         </div>
                         <div>
-                            <label for="phone">Direct Phone (WhatsApp Active) *</label>
+                            <label for="phone">Contact Number (WhatsApp Active) *</label>
                             <input type="tel" id="phone" name="phone" class="form-control" required pattern="[0-9]{10,14}" placeholder="+91 90000 00000">
                             <div style="margin-top: 6px;">
                                 <label style="font-size: 0.82rem; color: #777; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
-                                    <input type="checkbox" id="noWhatsApp" name="noWhatsApp" style="accent-color: var(--deep-burgundy); width: 16px; height: 16px;" onchange="document.getElementById('altPhoneWrapper').style.display = this.checked ? 'block' : 'none';">
-                                    WhatsApp not active on this number
+                                    <input type="checkbox" id="noWhatsApp" name="noWhatsApp" style="accent-color: var(--deep-burgundy); width: 16px; height: 16px;" onchange="document.getElementById('whatsappPhoneWrapper').style.display = this.checked ? 'block' : 'none';">
+                                    WhatsApp not active on this number?
                                 </label>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Alternate Phone (hidden by default) -->
-                    <div id="altPhoneWrapper" style="display: none; margin-bottom: var(--spacing-md);">
-                        <label for="altPhone">Alternate Phone Number *</label>
-                        <input type="tel" id="altPhone" name="altPhone" class="form-control" pattern="[0-9]{10,14}" placeholder="+91 80000 00000">
+                    <!-- WhatsApp Phone (hidden by default) -->
+                    <div id="whatsappPhoneWrapper" style="display: none; margin-bottom: var(--spacing-md);">
+                        <label for="whatsappPhone">WhatsApp Phone Number</label>
+                        <input type="tel" id="whatsappPhone" name="whatsappPhone" class="form-control" pattern="[0-9]{10,14}" placeholder="+91 80000 00000">
                     </div>
 
                     <!-- Row 2: Email -->
@@ -144,10 +158,10 @@
 
                     <!-- Product + Quantity Selection -->
                     <div class="form-group" style="margin-bottom: var(--spacing-md);">
-                        <label>Product & Quantity</label>
+                        <label>Product & Quantity *</label>
                         <div class="form-row" style="margin-bottom: 0;">
                             <div>
-                                <select id="productSelect" name="productSelect" class="form-control">
+                                <select id="productSelect" name="productSelect" class="form-control" required>
                                     <option value="" disabled selected>Select Product...</option>
                                     <option value="premium_danadar_500g">Premium Danadar Ghee — 500g Jar</option>
                                     <option value="classic_1l_tin">Classic Pure Cow Ghee — 1L Tin</option>
@@ -155,7 +169,7 @@
                                 </select>
                             </div>
                             <div>
-                                <select id="quantitySelect" name="quantitySelect" class="form-control" onchange="document.getElementById('customQtyWrapper').style.display = this.value === 'custom' ? 'block' : 'none';">
+                                <select id="quantitySelect" name="quantitySelect" class="form-control" required onchange="document.getElementById('customQtyWrapper').style.display = this.value === 'custom' ? 'block' : 'none';">
                                     <option value="" disabled selected>Select Quantity...</option>
                                     <option value="10">10 units</option>
                                     <option value="25">25 units</option>
@@ -240,6 +254,25 @@
         </svg>
     </a>
 
+    <script>
+        function toggleAssistant() {
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            gheePour.classList.toggle('active');
+            gheeBottle.classList.toggle('active');
+        }
+
+        // Close ghee pour when clicking outside
+        document.addEventListener('click', function(event) {
+            const assistant = document.querySelector('.ghee-assistant');
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            if (!assistant.contains(event.target)) {
+                gheePour.classList.remove('active');
+                gheeBottle.classList.remove('active');
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

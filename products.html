@@ -54,7 +54,21 @@
                     <a href="our-story.html">Our Story</a>
                     <a href="contact.html">Contact Us</a>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+                <div class="ghee-assistant" onclick="toggleAssistant()">
+                    <div class="ghee-bottle">
+                        <div class="bottle-cap"></div>
+                        <div class="bottle-body"></div>
+                        <div class="bottle-label">GAWA</div>
+                    </div>
+                    <div class="ghee-pour" id="gheePour">
+                        <div class="ghee-drop">
+                            <div class="ghee-content">
+                                <div class="ghee-phone">+91 00000 00000</div>
+                                <div class="ghee-call-icon">📞</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -197,6 +211,25 @@
         </svg>
     </a>
 
+    <script>
+        function toggleAssistant() {
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            gheePour.classList.toggle('active');
+            gheeBottle.classList.toggle('active');
+        }
+
+        // Close ghee pour when clicking outside
+        document.addEventListener('click', function(event) {
+            const assistant = document.querySelector('.ghee-assistant');
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            if (!assistant.contains(event.target)) {
+                gheePour.classList.remove('active');
+                gheeBottle.classList.remove('active');
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

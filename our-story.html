@@ -143,7 +143,21 @@
                     <a href="our-story.html" class="text-gold">Our Story</a>
                     <a href="contact.html">Contact Us</a>
                 </div>
-                <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+                <div class="ghee-assistant" onclick="toggleAssistant()">
+                    <div class="ghee-bottle">
+                        <div class="bottle-cap"></div>
+                        <div class="bottle-body"></div>
+                        <div class="bottle-label">GAWA</div>
+                    </div>
+                    <div class="ghee-pour" id="gheePour">
+                        <div class="ghee-drop">
+                            <div class="ghee-content">
+                                <div class="ghee-phone">+91 00000 00000</div>
+                                <div class="ghee-call-icon">📞</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -156,27 +170,25 @@
         </div>
     </section>
 
-    <!-- Our Mission & Vision Section -->
+    <!-- Our Mission Section -->
     <section class="section-pad bg-cream" style="border-bottom: 1px solid rgba(74, 13, 13, 0.05);">
-        <div class="container">
-            <div class="grid-layout" style="gap: var(--spacing-xl); align-items: start;">
-                <!-- Our Mission -->
-                <div class="animate-on-scroll" style="text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: var(--spacing-sm);">🎯</div>
-                    <h2 style="color: var(--deep-burgundy); margin-bottom: var(--spacing-sm); font-size: 1.6rem;">Our Mission</h2>
-                    <p style="color: var(--dark-brown); font-size: 1.05rem; line-height: 1.75; text-align: justify; text-justify: inter-word;">
-                        To deliver pure, unadulterated ghee to every kitchen — from family homes to five-star hotel pantries — by maintaining end-to-end quality control across our own dairy farms and modern processing facilities in West Bengal. We are committed to zero-compromise purity and on-time institutional logistics.
-                    </p>
-                </div>
-                <!-- Our Vision -->
-                <div class="animate-on-scroll" style="text-align: center; transition-delay: 0.15s;">
-                    <div style="font-size: 2.5rem; margin-bottom: var(--spacing-sm);">🌏</div>
-                    <h2 style="color: var(--deep-burgundy); margin-bottom: var(--spacing-sm); font-size: 1.6rem;">Our Vision</h2>
-                    <p style="color: var(--dark-brown); font-size: 1.05rem; line-height: 1.75; text-align: justify; text-justify: inter-word;">
-                        To scale Bengal's richest dairy heritage into a globally recognized standard of purity. By blending traditional wood-churned craftsmanship with robust modern logistics, we aim to empower hotels, food manufacturers, and distribution networks worldwide with ghee that is traceably pure, ethically sourced, and unconditionally consistent.
-                    </p>
-                </div>
-            </div>
+        <div class="container animate-on-scroll" style="max-width: 800px; text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🎯</div>
+            <h2 style="color: var(--deep-burgundy); margin-bottom: var(--spacing-md); font-size: 2.2rem; font-family: var(--font-heading);">Our Mission</h2>
+            <p style="color: var(--dark-brown); font-size: 1.15rem; line-height: 1.8; margin: 0 auto;">
+                To deliver pure, unadulterated ghee to every kitchen — from family homes to five-star hotel pantries — by maintaining end-to-end quality control across our own dairy farms and modern processing facilities in West Bengal. We are committed to zero-compromise purity and on-time institutional logistics.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="section-pad bg-white" style="border-bottom: 1px solid rgba(74, 13, 13, 0.05);">
+        <div class="container animate-on-scroll" style="max-width: 800px; text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🌏</div>
+            <h2 style="color: var(--deep-burgundy); margin-bottom: var(--spacing-md); font-size: 2.2rem; font-family: var(--font-heading);">Our Vision</h2>
+            <p style="color: var(--dark-brown); font-size: 1.15rem; line-height: 1.8; margin: 0 auto;">
+                To scale Bengal's richest dairy heritage into a globally recognized standard of purity. By blending traditional wood-churned craftsmanship with robust modern logistics, we aim to empower hotels, food manufacturers, and distribution networks worldwide with ghee that is traceably pure, ethically sourced, and unconditionally consistent.
+            </p>
         </div>
     </section>
 
@@ -285,6 +297,25 @@
         </svg>
     </a>
 
+    <script>
+        function toggleAssistant() {
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            gheePour.classList.toggle('active');
+            gheeBottle.classList.toggle('active');
+        }
+
+        // Close ghee pour when clicking outside
+        document.addEventListener('click', function(event) {
+            const assistant = document.querySelector('.ghee-assistant');
+            const gheePour = document.getElementById('gheePour');
+            const gheeBottle = document.querySelector('.ghee-bottle');
+            if (!assistant.contains(event.target)) {
+                gheePour.classList.remove('active');
+                gheeBottle.classList.remove('active');
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
