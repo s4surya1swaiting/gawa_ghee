@@ -564,7 +564,6 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
 .hero-content {
