@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /credits.html
 
 Sitemap: https://s4surya1swaiting.github.io/gawa_ghee/sitemap.xml
