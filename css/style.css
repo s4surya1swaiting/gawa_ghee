@@ -777,3 +777,56 @@ textarea.form-control {
     flex-direction: row-reverse;
   }
 }
+
+/* Logos Showcase Grid Styles */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  justify-content: center;
+}
+
+.logo-item {
+  background: var(--white);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  border: 1px solid rgba(74, 13, 13, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(74, 13, 13, 0.08);
+}
+
+.logo-svg {
+  width: 48px;
+  height: 48px;
+  fill: var(--deep-burgundy);
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.logo-item:hover .logo-svg {
+  opacity: 1;
+}
+
+.logo-item h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  color: var(--deep-burgundy);
+  font-family: var(--font-heading);
+}
+
+.logo-item span {
+  font-size: 0.8rem;
+  color: #777;
+}
+
