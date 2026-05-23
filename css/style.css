@@ -80,7 +80,6 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   width: 100%;
   padding: 0 var(--spacing-md);
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .text-center { text-align: center; }
@@ -164,22 +163,11 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   width: 50px;
   height: 70px;
   position: relative;
-  animation: bottle-bounce 2s ease-in-out infinite;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .ghee-bottle.active {
-  animation: none;
-  transform: rotate(-45deg);
-}
-
-@keyframes bottle-bounce {
-  0%, 100% {
-    transform: translateY(0) rotate(-5deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(5deg);
-  }
+  transform: scale(0.95);
 }
 
 .bottle-cap {
@@ -189,26 +177,11 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   border-radius: 5px 5px 0 0;
   margin: 0 auto;
   position: relative;
-  transform-origin: right center;
-  animation: cap-wiggle 3s ease-in-out infinite;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .ghee-bottle.active .bottle-cap {
-  animation: none;
-  transform: rotate(90deg) translateX(10px);
-}
-
-@keyframes cap-wiggle {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
+  transform: translateY(-2px);
 }
 
 .bottle-body {
@@ -270,80 +243,34 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   transform: translateY(0);
 }
 
-/* Ghee Pouring Animation */
+/* Ghee Spoon Presentation */
 .ghee-pour {
   position: absolute;
-  top: -10px;
-  left: -70px;
-  width: 70px;
-  height: 90px;
+  top: 50%;
+  left: -120px;
+  transform: translateY(-50%) translateX(20px);
+  width: 110px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
   z-index: 1002;
-  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ghee-pour.active {
   opacity: 1;
   visibility: visible;
-  animation: ghee-flow-aside 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.15s both;
+  transform: translateY(-50%) translateX(0);
 }
 
-@keyframes ghee-flow-aside {
-  0% {
-    transform: translate(90px, 10px) scale(0);
-    opacity: 0;
-  }
-  35% {
-    transform: translate(60px, 15px) scale(0.5);
-    opacity: 0.8;
-  }
-  65% {
-    transform: translate(-10px, 5px) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-}
-
-.ghee-drop {
-  width: 44px;
-  height: 60px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4), inset -3px -3px 10px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: ghee-wobble 2s ease-in-out infinite;
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-  margin: 0 auto;
-}
-
-@keyframes ghee-wobble {
-  0%, 100% {
-    transform: rotate(-3deg) scale(1);
-  }
-  50% {
-    transform: rotate(3deg) scale(1.05);
-  }
-}
-
-.ghee-drop::before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 14px;
-  height: 14px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  filter: blur(2px);
+.ghee-spoon {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  transform: rotate(-10deg);
+  margin-bottom: 5px;
 }
 
 .ghee-content {
@@ -665,7 +592,6 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   background-color: var(--white);
   padding: var(--spacing-md) 0;
   overflow: hidden;
-  overflow-x: hidden;
   border-top: 1px solid var(--grey-light);
   border-bottom: 1px solid var(--grey-light);
 }
@@ -673,7 +599,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 .ticker-wrapper {
   display: flex;
   width: 200%;
-  animation: ticker 40s linear infinite;
+  animation: ticker 15s linear infinite;
   overflow: hidden;
 }
 
@@ -698,7 +624,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 @media (max-width: 768px) {
   .ticker-wrapper {
     width: 200%;
-    animation: ticker 40s linear infinite;
+    animation: ticker 15s linear infinite;
     overflow: hidden;
   }
   
@@ -802,6 +728,46 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   max-height: 250px;
   margin: 0 auto;
   object-fit: contain;
+}
+
+/* Product Gallery Thumbnails */
+.product-gallery {
+  display: flex;
+  gap: 8px;
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  background-color: #f9f9f9;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.product-gallery::-webkit-scrollbar {
+  height: 4px;
+}
+
+.product-gallery::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.gallery-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  object-fit: contain;
+  background-color: var(--white);
+  padding: 4px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.gallery-thumb.active, .gallery-thumb:hover {
+  border-color: var(--royal-gold);
+}
+
+.gallery-thumb:active {
+  transform: scale(0.95);
 }
 
 .product-details {
@@ -1057,6 +1023,78 @@ textarea.form-control {
   border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 0.8rem;
   color: #888;
+}
+
+/* === Mobile Centering Overrides === */
+@media (max-width: 767px) {
+  body {
+    text-align: center;
+  }
+  
+  .product-details,
+  .pillar-card,
+  .timeline-content,
+  .section-pad,
+  .footer-grid,
+  .hero-content,
+  .b2b-graph-card {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .product-badges,
+  .btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+  
+  .sectors-list,
+  .check-list,
+  .footer-social-row {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .sectors-list span,
+  .check-list li {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .product-gallery {
+    justify-content: center;
+  }
+  
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-col ul li a {
+    justify-content: center;
+  }
+  
+  .contact-grid {
+    text-align: center;
+  }
+  
+  .contact-info {
+    align-items: center;
+  }
+  
+  .contact-detail {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .value-prop-card {
+    text-align: center;
+    align-items: center;
+  }
 }
 
 /* === Desktop Scaling === */

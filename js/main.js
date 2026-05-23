@@ -61,4 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // Product Gallery Interaction
+    const galleryThumbs = document.querySelectorAll('.gallery-thumb');
+    galleryThumbs.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            // Find parent product card
+            const card = this.closest('.product-card') || this.closest('.product-preview');
+            if (!card) return;
+
+            // Find main image
+            const mainImg = card.querySelector('.product-image img');
+            if (!mainImg) return;
+
+            // Update active state
+            const siblings = card.querySelectorAll('.gallery-thumb');
+            siblings.forEach(s => s.classList.remove('active'));
+            this.classList.add('active');
+
+            // Swap image source instantly without staggering
+            mainImg.src = this.src;
+        });
+    });
 });
