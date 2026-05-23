@@ -165,187 +165,46 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   }
 }
 
-/* Ghee Bottle Assistant */
-.ghee-assistant {
-  position: relative;
-  cursor: pointer;
-  z-index: 1001;
-  margin: 1.5rem auto 1rem;
-  display: block;
-  width: 50px;
-}
-
-.ghee-bottle {
-  width: 50px;
-  height: 70px;
-  position: relative;
-  transition: transform 0.4s ease;
-}
-
-.ghee-bottle.active {
-  transform: scale(0.95);
-}
-
-.bottle-cap {
-  width: 30px;
-  height: 15px;
-  background: linear-gradient(135deg, #8B4513 0%, #654321 100%);
-  border-radius: 5px 5px 0 0;
-  margin: 0 auto;
-  position: relative;
-  transition: transform 0.4s ease;
-}
-
-.ghee-bottle.active .bottle-cap {
-  transform: translateY(-2px);
-}
-
-.bottle-body {
-  width: 40px;
-  height: 50px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
-  border-radius: 5px 5px 10px 10px;
-  margin: 0 auto;
-  position: relative;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.3);
-  overflow: hidden;
-}
-
-.bottle-body::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 20px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 50%;
-  filter: blur(2px);
-}
-
-.bottle-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.6rem;
-  font-weight: bold;
-  color: var(--deep-burgundy);
-  background: var(--cream-ivory);
-  padding: 2px 4px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-
-.assistant-popup {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  background: var(--white);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-  min-width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  border: 2px solid var(--royal-gold);
-}
-
-.assistant-popup.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Ghee Spoon Presentation */
-.ghee-pour {
-  position: absolute;
-  top: 50%;
-  left: -120px;
-  transform: translateY(-50%) translateX(20px);
-  width: 110px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
-  z-index: 1002;
+/* Header Direct Call Button */
+.header-call-action {
+  margin-left: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.ghee-pour.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(0);
-}
-
-.ghee-spoon {
-  width: 100px;
-  height: auto;
-  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-  transform: rotate(-10deg);
-  margin-bottom: 5px;
-}
-
-.ghee-content {
-  text-align: center;
+.pulse-call-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--royal-gold);
   color: var(--deep-burgundy);
-  font-weight: bold;
-  z-index: 1;
-}
-
-.ghee-phone {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--deep-burgundy) !important;
-  background: var(--royal-gold);
-  padding: 4px 8px;
-  border-radius: 12px;
-  border: 1px solid var(--deep-burgundy);
-  white-space: nowrap;
-  display: inline-block;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  margin-top: 8px;
-  text-align: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.ghee-phone:hover {
-  transform: translateX(-50%) scale(1.05);
-  background: var(--white);
-}
-
-.ghee-call-icon {
+  font-weight: 700;
   font-size: 0.95rem;
-  animation: call-pulse 1s ease-in-out infinite;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  animation: pulse-ring 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  transition: all 0.3s ease;
+  border: 2px solid var(--deep-burgundy);
 }
 
-@keyframes call-pulse {
-  0%, 100% {
-    transform: scale(1);
+.pulse-call-btn:hover {
+  background-color: var(--deep-burgundy);
+  color: var(--royal-gold);
+  transform: scale(1.05);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
   }
-  50% {
-    transform: scale(1.2);
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
   }
-}
-
-.popup-content p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  color: var(--dark-brown);
-}
-
-.popup-content .phone-number {
-  font-weight: bold;
-  color: var(--deep-burgundy);
-  font-size: 1rem;
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
 }
 
 .btn-sm {
@@ -1245,7 +1104,7 @@ textarea.form-control {
     gap: 2.5rem;
   }
 
-  .ghee-assistant {
+  .header-call-action {
     margin: 0;
   }
 
