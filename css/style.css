@@ -581,10 +581,10 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 }
 
 .hero-visual img {
-  border-radius: 8px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   max-width: 80%;
   margin: 0 auto;
+  mix-blend-mode: multiply;
+  filter: contrast(1.05); /* Slight contrast boost to counter multiply dulling */
 }
 
 /* Credibility Ticker */
