@@ -566,7 +566,7 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -1064,7 +1064,6 @@ textarea.form-control {
   .container {
     max-width: 1200px;
     padding: 0 var(--spacing-lg);
-    overflow-x: hidden;
   }
 
   /* Header */
