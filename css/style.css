@@ -126,6 +126,22 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
   color: var(--white);
 }
 
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  border: 1px solid #25D366;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebd5c;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
 .btn-call-highlight {
   background: linear-gradient(135deg, var(--royal-gold) 0%, #f4c430 100%);
   color: var(--deep-burgundy);
