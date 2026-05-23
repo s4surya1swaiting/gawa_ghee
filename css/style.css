@@ -1069,6 +1069,13 @@ textarea.form-control {
   }
 }
 
+/* Mobile fallback for split layout */
+.split-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
 /* === Desktop Scaling === */
 @media (min-width: 768px) {
   .container {
