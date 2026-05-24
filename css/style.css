@@ -639,14 +639,12 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 /* Sections */
 .section-pad {
   padding: var(--spacing-xl) 0;
-  overflow: hidden;
 }
 
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-  overflow: hidden;
 }
 
 /* Pillar Matrix */
