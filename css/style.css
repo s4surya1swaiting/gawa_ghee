@@ -760,6 +760,8 @@ p { font-size: 1rem; margin-bottom: var(--spacing-md); color: #4a4a4a; }
 
 .product-details h3 {
   margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--deep-burgundy);
 }
 
 .product-price {
@@ -1136,6 +1138,11 @@ textarea.form-control {
 
   .hero-ctas {
     flex-direction: row;
+  }
+  
+  .hero-ctas .btn {
+    width: auto;
+    padding: 0.8rem 2rem;
   }
 
   .trust-badges {
